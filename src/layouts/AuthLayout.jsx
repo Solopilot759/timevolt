@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import timevoltLogo from "../assets/images/timevolt.png";
-import "../styles/authLayout.css";
+import "../styles/authlayout.css";
 
 function AuthLayout() {
   return (
