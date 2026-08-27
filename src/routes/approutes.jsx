@@ -1,24 +1,24 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Login from "../pages/Login";
-import Register from "../pages/Register";
-import VerifyEmail from "../pages/VerifyEmail";
-import ForgotPassword from "../pages/ForgotPassword";
-import ResetPassword from "../pages/ResetPassword";
-import GoogleCallback from "../pages/GoogleCallback";
+import Login from "../pages/Login.jsx";
+import Register from "../pages/register.jsx";
+import VerifyEmail from "../pages/VerifyEmail.jsx";
+import ForgotPassword from "../pages/ForgotPassword.jsx";
+import ResetPassword from "../pages/ResetPassword.jsx";
+import GoogleCallback from "../pages/GoogleCallback.jsx";
 
-import Dashboard from "../pages/dashboard";
-import Activities from "../pages/activities";
-import GenerateTimetable from "../pages/generate";
-import SavedTimetables from "../pages/saved-timetables";
-import MySchedule from "../pages/schedule";
-import Settings from "../pages/settings";
-import Profile from "../pages/profile";
-import PageTransition from "../components/PageTransitions";
+import Dashboard from "../pages/dashboard.jsx";
+import Activities from "../pages/activities.jsx";
+import GenerateTimetable from "../pages/generate.jsx";
+import SavedTimetables from "../pages/saved-timetables.jsx";
+import MySchedule from "../pages/schedule.jsx";
+import Settings from "../pages/settings.jsx";
+import Profile from "../pages/profile.jsx";
+import PageTransition from "../components/PageTransitions.jsx";
 
-import AuthLayout from "../layouts/AuthLayout";
-import ProtectedRoute from "../components/ProtectedRoute";
-import { SettingsProvider } from "../components/settings-context";
+import AuthLayout from "../layouts/AuthLayout.jsx";
+import ProtectedRoute from "../components/ProtectedRoute.jsx";
+import { SettingsProvider } from "../components/settings-context.jsx";
 
 
 function AppRoutes() {
