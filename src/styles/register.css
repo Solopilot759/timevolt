@@ -1,0 +1,280 @@
+/* ================================
+   TIMEVOLT REGISTER PAGE
+================================ */
+
+.register-form-container {
+  width: 100%;
+  max-width: 470px;
+  margin: 0 auto;
+  padding: 20px 10px;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.register-header {
+  margin-bottom: 28px;
+}
+
+.register-header h1 {
+  margin: 0 0 8px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.5px;
+}
+
+.register-header p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* ================================
+   FORM
+================================ */
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+
+/* ================================
+   FORM GROUP
+================================ */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.form-group input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 15px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #111827;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.form-group input::placeholder {
+  color: #9ca3af;
+}
+
+.form-group input:focus {
+  border-color: #6366f1;
+
+  box-shadow:
+    0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+
+/* ================================
+   PASSWORD HINT
+================================ */
+
+.password-hint {
+  margin-top: -2px;
+
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+
+/* ================================
+   TERMS
+================================ */
+
+.terms-section {
+  margin-top: 2px;
+}
+
+.terms-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  font-size: 13px;
+  line-height: 1.5;
+  color: #6b7280;
+
+  cursor: pointer;
+}
+
+.terms-label input {
+  width: 16px;
+  height: 16px;
+
+  margin-top: 2px;
+
+  accent-color: #6366f1;
+
+  cursor: pointer;
+}
+
+.terms-link {
+  border: none;
+  padding: 0;
+
+  background: transparent;
+
+  color: #6366f1;
+
+  font-size: inherit;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.terms-link:hover {
+  text-decoration: underline;
+}
+
+
+/* ================================
+   ERROR MESSAGE
+================================ */
+
+.register-error {
+  margin: -4px 0 0;
+
+  padding: 10px 12px;
+
+  border-radius: 8px;
+
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+
+  color: #dc2626;
+
+  font-size: 13px;
+}
+
+
+/* ================================
+   REGISTER BUTTON
+================================ */
+
+.register-button {
+  width: 100%;
+
+  padding: 14px 18px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #6366f1;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.register-button:hover {
+  background: #4f46e5;
+
+  box-shadow:
+    0 6px 18px rgba(79, 70, 229, 0.22);
+
+  transform: translateY(-1px);
+}
+
+.register-button:active {
+  transform: translateY(0);
+}
+
+.register-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+
+/* ================================
+   LOGIN LINK
+================================ */
+
+.login-text {
+  margin-top: 24px;
+
+  text-align: center;
+
+  color: #6b7280;
+
+  font-size: 14px;
+}
+
+.login-text button {
+  margin-left: 5px;
+
+  border: none;
+  padding: 0;
+
+  background: transparent;
+
+  color: #6366f1;
+
+  font-size: inherit;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.login-text button:hover {
+  text-decoration: underline;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 600px) {
+
+  .register-form-container {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .register-header h1 {
+    font-size: 28px;
+  }
+
+  .form-group input {
+    padding: 12px 14px;
+  }
+
+}

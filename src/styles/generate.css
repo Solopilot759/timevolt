@@ -1,0 +1,375 @@
+/* ================= HEADER ================= */
+
+.generate-header {
+    margin-bottom: 24px;
+}
+
+.generate-header h1 {
+    margin: 0;
+    color: var(--text-heading, #0b2e6b);
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.generate-header p {
+    margin: 8px 0 0;
+    max-width: 520px;
+
+    color: var(--text-muted, #64748b);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* ================= ACTIVITY SELECT LIST ================= */
+
+.activity-select-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    margin-bottom: 22px;
+}
+
+.activity-select-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    padding: 14px 16px;
+
+    border: 1px solid var(--border-color, #e6eaf1);
+    border-radius: 10px;
+
+    transition: border-color .18s ease, background .18s ease;
+}
+
+.activity-select-item:hover {
+    border-color: var(--accent, #cddcf4);
+}
+
+.activity-select-item.selected {
+    border-color: var(--accent, #2563eb);
+    background: var(--accent-bg-softer, #f6faff);
+}
+
+.activity-select-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    cursor: pointer;
+}
+
+.activity-select-checkbox input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+
+    flex-shrink: 0;
+
+    accent-color: var(--accent, #2563eb);
+    cursor: pointer;
+}
+
+.activity-select-info h3 {
+    margin: 0 0 3px;
+    color: var(--text-strong, #1e293b);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.activity-select-info p {
+    margin: 0;
+    color: var(--text-faint, #94a3b8);
+    font-size: 11px;
+}
+
+.session-length-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 12px;
+    margin-left: 31px;
+
+    background: var(--bg-panel, #fff);
+    border: 1px solid var(--border-color, #e6eaf1);
+    border-radius: 8px;
+}
+
+.session-length-input label {
+    color: var(--text-muted, #64748b);
+    font-size: 11px;
+}
+
+.session-length-input input {
+    width: 60px;
+    padding: 5px 8px;
+
+    border: 1px solid var(--border-color, #dbe3ef);
+    border-radius: 6px;
+
+    background: var(--bg-panel, #fff);
+    color: var(--text-strong, #1e293b);
+    font-size: 12px;
+}
+
+
+/* ================= SUMMARY / GENERATE ================= */
+
+.generate-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    padding-top: 18px;
+    border-top: 1px solid var(--border-color-soft, #eef1f5);
+}
+
+.generate-summary > div {
+    color: var(--text-body, #334155);
+    font-size: 12.5px;
+}
+
+.generate-summary strong {
+    color: var(--text-heading, #0b2e6b);
+}
+
+.generate-summary-divider {
+    margin: 0 8px;
+    color: var(--text-faint, #cbd5e1);
+}
+
+.generate-error {
+    width: 100%;
+    margin: 0;
+
+    color: var(--danger, #dc2626);
+    font-size: 11.5px;
+}
+
+
+/* ================= UNSCHEDULED WARNING ================= */
+
+.unscheduled-warning {
+    margin-bottom: 18px;
+    padding: 14px 16px;
+
+    background: var(--orange-bg, #fff8ec);
+    border: 1px solid var(--orange, #fbe3b6);
+    border-radius: 10px;
+}
+
+.unscheduled-warning h3 {
+    margin: 0 0 8px;
+    color: var(--orange, #92620a);
+    font-size: 12.5px;
+    font-weight: 700;
+}
+
+.unscheduled-warning ul {
+    margin: 0;
+    padding-left: 18px;
+
+    color: var(--orange, #92620a);
+    font-size: 11.5px;
+    line-height: 1.7;
+}
+
+
+/* ================= GENERATED TIMETABLE ================= */
+
+.generated-timetable {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.timetable-day {
+    padding: 16px;
+
+    border: 1px solid var(--border-color, #e6eaf1);
+    border-radius: 12px;
+
+    background: var(--bg-panel-soft, #fafcff);
+}
+
+.timetable-day h3 {
+    margin: 0 0 12px;
+
+    color: var(--text-heading, #0b2e6b);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+}
+
+.timetable-slot {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    padding: 10px 0;
+
+    border-bottom: 1px solid var(--border-color-soft, #eef1f5);
+}
+
+.timetable-slot:last-child {
+    border-bottom: none;
+}
+
+.timetable-slot-time {
+    color: var(--accent, #2563eb);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.timetable-slot-name {
+    color: var(--text-body, #334155);
+    font-size: 12.5px;
+}
+
+
+/* ================= SAVE TIMETABLE BAR ================= */
+
+.save-timetable-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 18px;
+    padding-top: 18px;
+
+    border-top: 1px solid var(--border-color-soft, #eef1f5);
+}
+
+.save-timetable-bar input[type="text"] {
+    flex: 1;
+    min-width: 220px;
+
+    padding: 9px 12px;
+
+    border: 1px solid var(--border-color, #dbe3ef);
+    border-radius: 8px;
+
+    background: var(--bg-panel, #fff);
+    color: var(--text-strong, #1e293b);
+    font-size: 12.5px;
+}
+
+.save-timetable-bar input[type="text"]:focus {
+    outline: none;
+    border-color: var(--accent, #2563eb);
+}
+
+.save-success {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.save-success p {
+    margin: 0;
+    color: var(--success, #16a34a);
+    font-size: 12.5px;
+    font-weight: 600;
+}
+/* ============================================================
+   MOBILE RESPONSIVE — GENERATE TIMETABLE
+============================================================ */
+
+@media (max-width: 700px) {
+
+    .generate-content {
+        margin-left: 0;
+        padding: 75px 16px 25px;
+    }
+
+    .generate-header {
+        margin-bottom: 20px;
+    }
+
+    .generate-header h1 {
+        font-size: 25px;
+    }
+
+    .generate-header p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    /* Activity selection */
+
+    .activity-select-item {
+        padding: 13px;
+    }
+
+    .activity-select-checkbox {
+        gap: 10px;
+    }
+
+    .activity-select-info h3 {
+        font-size: 12.5px;
+    }
+
+    .activity-select-info p {
+        font-size: 10.5px;
+    }
+
+    .session-length-input {
+        margin-left: 27px;
+        width: calc(100% - 27px);
+        box-sizing: border-box;
+    }
+
+    /* Summary */
+
+    .generate-summary {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .generate-summary > div {
+        font-size: 12px;
+    }
+
+    .generate-summary-divider {
+        display: none;
+    }
+
+    /* Generated timetable */
+
+    .generated-timetable {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .timetable-day {
+        padding: 14px;
+    }
+
+    /* Save bar */
+
+    .save-timetable-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .save-timetable-bar input[type="text"] {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .save-timetable-bar button {
+        width: 100%;
+    }
+
+    .save-success {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+}

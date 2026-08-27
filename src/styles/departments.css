@@ -1,0 +1,98 @@
+.dept-page {
+  margin-left: 260px;
+  padding: 100px 25px;
+  background: #f1f5f9;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.dept-header h1 {
+  font-size: 24px;
+  color: #0f172a;
+}
+
+.dept-header p {
+  color: #64748b;
+  margin-top: 4px;
+}
+
+/* ADD BOX */
+.add-box {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.add-box input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+}
+
+.add-box input:focus {
+  border-color: #2563eb;
+}
+
+.add-box button {
+  padding: 10px 15px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* TABLE */
+.dept-table {
+  margin-top: 25px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* HEADER ROW */
+.table-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  background: #0f172a;
+  color: white;
+  padding: 12px 15px;
+  font-weight: bold;
+}
+
+/* ROW */
+.table-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+}
+
+.table-row:hover {
+  background: #f8fafc;
+}
+
+/* BUTTON */
+.table-row button {
+  width: fit-content;
+  padding: 6px 10px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* EMPTY STATE */
+.empty-state {
+  padding: 20px;
+  color: #64748b;
+}

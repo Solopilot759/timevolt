@@ -1,0 +1,816 @@
+/* ============================================================
+   THEME VARIABLES
+   Declared once here (dashboard.css is loaded on every main app
+   page), so any other stylesheet loaded alongside it — sidebar,
+   generate, saved-timetables, schedule, settings — can reference
+   the same tokens. Dark mode is toggled by Settings, which sets
+   data-theme="dark" on <html>.
+============================================================ */
+
+:root {
+    --bg-page: #f5f7fb;
+    --bg-panel: #ffffff;
+    --bg-panel-soft: #fafcff;
+
+    --border-color: #e6eaf1;
+    --border-color-soft: #eef1f5;
+    --border-dashed: #d7e1f0;
+
+    --text-heading: #0b2e6b;
+    --text-strong: #0f172a;
+    --text-body: #334155;
+    --text-muted: #64748b;
+    --text-faint: #94a3b8;
+
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
+    --accent-bg-soft: #eaf2ff;
+    --accent-bg-softer: #f6faff;
+
+    --purple: #7c3aed;
+    --purple-bg: #f0eaff;
+
+    --success: #16a34a;
+    --success-bg: #e6f9ef;
+
+    --orange: #ea8a00;
+    --orange-bg: #fff3e0;
+
+    --danger: #dc2626;
+
+    --shadow-soft: rgba(15, 23, 42, .04);
+    --shadow-medium: rgba(15, 23, 42, .07);
+    --shadow-accent: rgba(37, 99, 235, .08);
+
+    --track-bg: #f1f5f9;
+}
+
+[data-theme="dark"] {
+    --bg-page: #0f172a;
+    --bg-panel: #16213a;
+    --bg-panel-soft: #131d33;
+
+    --border-color: #26324a;
+    --border-color-soft: #1f2a40;
+    --border-dashed: #33415c;
+
+    --text-heading: #e2e8f0;
+    --text-strong: #f1f5f9;
+    --text-body: #cbd5e1;
+    --text-muted: #94a3b8;
+    --text-faint: #64748b;
+
+    --accent: #3b82f6;
+    --accent-hover: #60a5fa;
+    --accent-bg-soft: #1e3a5f;
+    --accent-bg-softer: #17263f;
+
+    --purple: #a78bfa;
+    --purple-bg: #2e2555;
+
+    --success: #4ade80;
+    --success-bg: #123424;
+
+    --orange: #fbbf24;
+    --orange-bg: #3a2a0f;
+
+    --danger: #f87171;
+
+    --shadow-soft: rgba(0, 0, 0, .35);
+    --shadow-medium: rgba(0, 0, 0, .5);
+    --shadow-accent: rgba(59, 130, 246, .18);
+
+    --track-bg: #1e293b;
+}
+
+
+/* ============================================================
+   LAYOUT
+============================================================ */
+
+.dashboard-layout {
+    min-height: 100vh;
+    background: var(--bg-page);
+
+    font-family: "Franklin Gothic Medium", "Franklin Gothic", "Segoe UI",
+        "Helvetica Neue", Arial, sans-serif;
+
+    transition: background .2s ease;
+}
+
+.dashboard-content {
+    margin-left: 260px;
+    padding: 40px 44px 60px;
+}
+
+
+/* ============================================================
+   HEADER
+============================================================ */
+
+.dashboard-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 34px;
+}
+
+.dashboard-greeting {
+    margin: 0 0 6px;
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .2px;
+}
+
+.dashboard-topbar h1 {
+    margin: 0;
+    color: var(--text-heading);
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+.dashboard-description {
+    margin: 10px 0 0;
+    max-width: 520px;
+    color: var(--text-muted);
+    font-size: 13.5px;
+    line-height: 1.6;
+}
+
+.dashboard-date {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px 20px;
+
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px var(--shadow-soft);
+}
+
+.dashboard-date small {
+    display: block;
+    color: var(--text-faint);
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+}
+
+.dashboard-date strong {
+    display: block;
+    margin-top: 3px;
+    color: var(--text-body);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* ============================================================
+   STATS
+============================================================ */
+
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 26px;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 20px;
+
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+
+    box-shadow: 0 3px 14px var(--shadow-soft);
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px var(--shadow-medium);
+}
+
+.stat-icon {
+    flex-shrink: 0;
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.stat-icon.blue {
+    background: var(--accent-bg-soft);
+    color: var(--accent);
+}
+
+.stat-icon.purple {
+    background: var(--purple-bg);
+    color: var(--purple);
+}
+
+.stat-icon.green {
+    background: var(--success-bg);
+    color: var(--success);
+}
+
+.stat-icon.orange {
+    background: var(--orange-bg);
+    color: var(--orange);
+}
+
+.stat-card span {
+    display: block;
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.stat-card h2 {
+    margin: 3px 0;
+    color: var(--text-heading);
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.stat-card small {
+    color: var(--text-faint);
+    font-size: 10.5px;
+}
+
+
+/* ============================================================
+   GRID
+============================================================ */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1.55fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+
+/* ============================================================
+   PANELS
+============================================================ */
+
+.dashboard-panel {
+    padding: 24px;
+
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+
+    box-shadow: 0 3px 14px var(--shadow-soft);
+
+    margin-bottom: 20px;
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.panel-header h2 {
+    margin: 0;
+    color: var(--text-strong);
+    font-size: 16.5px;
+    font-weight: 700;
+}
+
+.panel-header p {
+    margin: 5px 0 0;
+    color: var(--text-faint);
+    font-size: 11px;
+}
+
+.panel-header a {
+    color: var(--accent);
+    font-size: 11.5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color .15s ease;
+}
+
+.panel-header a:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+
+/* ============================================================
+   SCHEDULE (today's schedule list, if populated)
+============================================================ */
+
+.schedule-item {
+    display: flex;
+    align-items: center;
+
+    min-height: 67px;
+
+    border-bottom: 1px solid var(--border-color-soft);
+}
+
+.schedule-item:last-child {
+    border-bottom: none;
+}
+
+.schedule-time {
+    width: 55px;
+}
+
+.schedule-time strong {
+    display: block;
+    color: var(--text-heading);
+    font-size: 13px;
+}
+
+.schedule-time span {
+    color: var(--text-faint);
+    font-size: 9px;
+}
+
+.schedule-line {
+    width: 3px;
+    height: 34px;
+
+    margin-right: 13px;
+
+    border-radius: 5px;
+    background: var(--accent-bg-soft);
+}
+
+.active-class .schedule-line {
+    background: var(--accent);
+}
+
+.schedule-info {
+    flex: 1;
+}
+
+.schedule-info h3 {
+    margin: 0 0 4px;
+    color: var(--text-body);
+    font-size: 12px;
+}
+
+.schedule-info p {
+    margin: 0;
+    color: var(--text-faint);
+    font-size: 10px;
+}
+
+.schedule-status {
+    padding: 5px 8px;
+
+    border-radius: 5px;
+
+    background: var(--track-bg);
+    color: var(--text-muted);
+
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.schedule-status.now {
+    background: var(--accent-bg-soft);
+    color: var(--accent);
+}
+
+
+/* ============================================================
+   EMPTY STATES (matches className="empty-state" used in JSX)
+============================================================ */
+
+.empty-state {
+    min-height: 160px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 28px;
+
+    text-align: center;
+
+    border: 1px dashed var(--border-dashed);
+    border-radius: 12px;
+
+    background: var(--bg-panel-soft);
+}
+
+.empty-state h3 {
+    margin: 0 0 7px;
+
+    color: var(--text-body);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.empty-state p {
+    max-width: 400px;
+
+    margin: 0 0 16px;
+
+    color: var(--text-faint);
+    font-size: 11.5px;
+    line-height: 1.6;
+}
+
+.empty-state a {
+    padding: 9px 16px;
+
+    border-radius: 8px;
+
+    background: var(--accent);
+    color: #fff;
+
+    font-size: 11.5px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: background .18s ease, transform .18s ease;
+}
+
+.empty-state a:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+}
+
+
+/* ============================================================
+   QUICK ACTIONS
+============================================================ */
+
+.quick-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.quick-action {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px;
+
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color-soft);
+    border-radius: 10px;
+
+    text-align: left;
+    text-decoration: none;
+
+    transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+
+.quick-action:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 14px var(--shadow-accent);
+    transform: translateX(2px);
+}
+
+.quick-action-icon {
+    flex-shrink: 0;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+    background: var(--accent-bg-soft);
+    color: var(--accent);
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.quick-action h3 {
+    margin: 0 0 3px;
+    color: var(--text-body);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.quick-action p {
+    margin: 0;
+    color: var(--text-faint);
+    font-size: 10px;
+}
+
+.quick-action > span:last-child {
+    margin-left: auto;
+    color: var(--accent);
+    font-size: 14px;
+}
+
+.quick-action.featured {
+    background: var(--accent-bg-softer);
+    border-color: var(--accent-bg-soft);
+}
+
+
+/* ============================================================
+   WEEKLY OVERVIEW (optional, if reintroduced)
+============================================================ */
+
+.weekly-panel {
+    margin-bottom: 20px;
+}
+
+.week-chart {
+    height: 170px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+
+    padding: 10px 5px 0;
+}
+
+.day-column {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 7px;
+}
+
+.day-column > span {
+    color: var(--text-faint);
+    font-size: 10px;
+}
+
+.day-column strong {
+    color: var(--text-muted);
+    font-size: 10px;
+}
+
+.bar-container {
+    width: 30px;
+    height: 105px;
+
+    display: flex;
+    align-items: flex-end;
+
+    background: var(--track-bg);
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.bar {
+    width: 100%;
+
+    background: var(--accent-bg-soft);
+    border-radius: 7px 7px 0 0;
+}
+
+.day-column.today .bar {
+    background: var(--accent);
+}
+
+.day-column.today > span {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+
+/* ============================================================
+   TIMETABLE / ACTIVITY CARDS
+============================================================ */
+
+.timetable-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 13px;
+}
+
+.timetable-card {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 15px;
+
+    border: 1px solid var(--border-color-soft);
+    border-radius: 10px;
+
+    transition: border-color .18s ease, box-shadow .18s ease;
+}
+
+.timetable-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 14px var(--shadow-soft);
+}
+
+.timetable-card-icon {
+    flex-shrink: 0;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+    background: var(--accent-bg-soft);
+    color: var(--accent);
+
+    font-weight: 700;
+}
+
+.timetable-card-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.timetable-card-info h3 {
+    margin: 0 0 4px;
+
+    color: var(--text-body);
+    font-size: 11.5px;
+    font-weight: 600;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.timetable-card-info p {
+    margin: 0 0 3px;
+
+    color: var(--text-muted);
+    font-size: 9.5px;
+}
+
+.timetable-card-info small {
+    color: var(--text-faint);
+    font-size: 8.5px;
+    text-transform: capitalize;
+}
+
+.timetable-card button {
+    border: none;
+    background: transparent;
+
+    color: var(--accent);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* ============================================================
+   BUTTONS (reusable link/primary styles)
+============================================================ */
+
+.dashboard-link-button {
+    padding: 6px 0;
+
+    border: none;
+    background: transparent;
+
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: color .15s ease, transform .15s ease;
+}
+
+.dashboard-link-button:hover {
+    color: var(--accent-hover);
+    transform: translateX(2px);
+}
+
+.dashboard-primary-button {
+    padding: 9px 16px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: var(--accent);
+    color: #fff;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background .18s ease, transform .18s ease;
+}
+
+.dashboard-primary-button:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+}
+
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 1100px) {
+
+    .dashboard-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timetable-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .dashboard-content {
+        margin-left: 0;
+        padding: 75px 16px 25px;
+    }
+
+    .dashboard-topbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+
+    .dashboard-topbar h1 {
+        font-size: 25px;
+    }
+
+    .dashboard-description {
+        font-size: 12.5px;
+    }
+
+    .dashboard-date {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .dashboard-stats {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .stat-card {
+        padding: 16px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .dashboard-panel {
+        padding: 18px 16px;
+    }
+
+    .panel-header {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .timetable-cards {
+        grid-template-columns: 1fr;
+    }
+}

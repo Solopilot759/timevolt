@@ -1,0 +1,172 @@
+/* ================= LIST ================= */
+
+.saved-timetable-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.saved-timetable-card {
+    padding: 16px 18px;
+
+    border: 1px solid var(--border-color, #e6eaf1);
+    border-radius: 12px;
+}
+
+.saved-timetable-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.saved-timetable-title h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin: 0 0 4px;
+
+    color: var(--text-heading, #0b2e6b);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.saved-timetable-title p {
+    margin: 0;
+    color: var(--text-faint, #94a3b8);
+    font-size: 11px;
+}
+
+.active-badge {
+    padding: 2px 8px;
+
+    background: var(--success-bg, #e6f9ef);
+    border-radius: 999px;
+
+    color: var(--success, #16a34a);
+    font-size: 9.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .3px;
+}
+
+
+/* ================= ACTIONS ================= */
+
+.saved-timetable-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.delete-link {
+    color: var(--danger, #dc2626) !important;
+}
+
+
+/* ================= RENAME ================= */
+
+.rename-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.rename-row input[type="text"] {
+    padding: 6px 10px;
+
+    border: 1px solid var(--border-color, #dbe3ef);
+    border-radius: 6px;
+
+    background: var(--bg-panel, #fff);
+    color: var(--text-strong, #1e293b);
+    font-size: 12.5px;
+}
+
+.rename-row input[type="text"]:focus {
+    outline: none;
+    border-color: var(--accent, #2563eb);
+}
+
+
+/* ================= EXPANDED DETAILS ================= */
+
+.saved-timetable-details {
+    margin-top: 16px;
+    padding-top: 16px;
+
+    border-top: 1px solid var(--border-color-soft, #eef1f5);
+}
+
+
+/* ================= ERROR ================= */
+
+.saved-timetables-error {
+    margin-bottom: 14px;
+}
+/* ============================================================
+   MOBILE RESPONSIVE — SAVED TIMETABLES
+============================================================ */
+
+@media (max-width: 700px) {
+
+    .saved-timetables-content {
+        margin-left: 0;
+        padding: 75px 16px 25px;
+    }
+
+    .saved-timetable-list {
+        gap: 12px;
+    }
+
+    .saved-timetable-card {
+        padding: 14px;
+    }
+
+    .saved-timetable-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .saved-timetable-title h3 {
+        font-size: 13px;
+        flex-wrap: wrap;
+    }
+
+    .saved-timetable-title p {
+        font-size: 10px;
+    }
+
+    .saved-timetable-actions {
+        width: 100%;
+        gap: 10px;
+    }
+
+    .saved-timetable-actions button,
+    .saved-timetable-actions a {
+        flex: 1;
+    }
+
+    .rename-row {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .rename-row input[type="text"] {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .rename-row button {
+        width: 100%;
+    }
+
+    .saved-timetable-details {
+        overflow-x: auto;
+    }
+}
